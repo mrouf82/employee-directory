@@ -1,12 +1,20 @@
 import React from "react";
-import SearchBox from "./SearchBox.js";
-import "../styles/Nav.css";
+//import "./Nav.css";
 
-function Nav({ handleSearchChange }) {
+function Nav({ searchEnter }) {
   return (
-    <nav className="navbar navbar-expand navbar-light bg-light">
+    <nav className="navbar navbar-dark bg-dark">
       <div className="navbar-collapse row" id="navbarNav">
-        <SearchBox handleSearchChange={handleSearchChange} />
+        <div className="searchbar">
+          <form className="form-inline">
+            <input
+              className="form-control"
+              type="search"
+              placeholder="Search Employees"
+              onChange={(e) => searchEnter(e)}
+            />
+          </form>
+        </div>
       </div>
     </nav>
   );
